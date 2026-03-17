@@ -17,8 +17,6 @@
       .handwriting {
         font-family: "Dancing Script", cursive;
       }
-
-      /* Floating hearts animation */
       .heart {
         position: fixed;
         font-size: 20px;
@@ -28,7 +26,6 @@
         pointer-events: none;
         z-index: 0;
       }
-
       @keyframes float {
         0% {
           transform: translateY(100vh) scale(0) rotate(0deg);
@@ -45,14 +42,11 @@
           opacity: 0;
         }
       }
-
-      /* Gradient background animation */
       .gradient-bg {
         background: linear-gradient(-45deg, #ffeef8, #ffe4ec, #f8e1f4, #fff0f3);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
       }
-
       @keyframes gradient {
         0% {
           background-position: 0% 50%;
@@ -64,18 +58,13 @@
           background-position: 0% 50%;
         }
       }
-
-      /* Button hover effects */
       .btn-bounce:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(255, 107, 157, 0.3);
       }
-
-      /* Glitch effect for wrong answer */
       .glitch {
         animation: glitch 0.3s ease-in-out;
       }
-
       @keyframes glitch {
         0%,
         100% {
@@ -94,8 +83,6 @@
           transform: translate(2px, -2px);
         }
       }
-
-      /* Sparkle animation */
       .sparkle {
         position: absolute;
         width: 4px;
@@ -104,7 +91,6 @@
         border-radius: 50%;
         animation: sparkle 2s linear infinite;
       }
-
       @keyframes sparkle {
         0%,
         100% {
@@ -116,31 +102,23 @@
           transform: scale(1);
         }
       }
-
-      /* Card flip animation */
       .flip-card {
         perspective: 1000px;
       }
-
       .flip-card-inner {
         transition: transform 0.6s;
         transform-style: preserve-3d;
       }
-
       .flip-card.flipped .flip-card-inner {
         transform: rotateY(180deg);
       }
-
       .flip-card-front,
       .flip-card-back {
         backface-visibility: hidden;
       }
-
       .flip-card-back {
         transform: rotateY(180deg);
       }
-
-      /* Pulse animation for yes button */
       @keyframes pulse-pink {
         0%,
         100% {
@@ -150,12 +128,9 @@
           box-shadow: 0 0 0 20px rgba(255, 107, 157, 0);
         }
       }
-
       .pulse-btn {
         animation: pulse-pink 2s infinite;
       }
-
-      /* Typewriter cursor */
       .cursor {
         display: inline-block;
         width: 3px;
@@ -165,7 +140,6 @@
         margin-left: 2px;
         vertical-align: text-bottom;
       }
-
       @keyframes blink {
         0%,
         50% {
@@ -176,14 +150,10 @@
           opacity: 0;
         }
       }
-
-      /* Hide scrollbar */
       ::-webkit-scrollbar {
         width: 0px;
         background: transparent;
       }
-
-      /* Glassmorphism */
       .glass {
         background: rgba(255, 255, 255, 0.25);
         backdrop-filter: blur(10px);
@@ -193,10 +163,8 @@
     </style>
   </head>
   <body class="gradient-bg min-h-screen relative">
-    <!-- Floating Hearts Container -->
     <div id="hearts-container"></div>
 
-    <!-- Main Content -->
     <div
       class="relative z-10 min-h-screen flex items-center justify-center p-4"
     >
@@ -208,17 +176,14 @@
         <div class="mb-6">
           <span class="text-6xl animate-bounce inline-block">💝</span>
         </div>
-
         <h1
           class="handwriting text-5xl md:text-7xl text-pink-600 mb-6 drop-shadow-sm"
         >
           My Dearest Love
         </h1>
-
         <div class="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
           <p id="typewriter-text" class="min-h-[120px]"></p>
         </div>
-
         <button
           onclick="showDateSection()"
           class="btn-bounce bg-gradient-to-r from-pink-400 to-rose-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-pink-300/50"
@@ -227,34 +192,55 @@
         </button>
       </div>
 
-      <!-- Date Invitation Section (Hidden initially) -->
+      <!-- Date Invitation Section -->
       <div
         id="date-card"
         class="hidden glass rounded-3xl p-8 md:p-12 max-w-2xl w-full shadow-2xl text-center"
       >
-        <div class="mb-4">
-          <span class="text-5xl">🌹</span>
-        </div>
-
+        <div class="mb-4"><span class="text-5xl">🌹</span></div>
         <h2 class="handwriting text-4xl md:text-6xl text-pink-600 mb-6">
           Make It Up To You
         </h2>
 
-        <p class="text-gray-700 text-lg mb-8 leading-relaxed">
-          I want to take you somewhere special...<br />
-          <span class="font-semibold text-pink-500">Sandton</span> awaits us for
-          a magical evening ✨<br />
-          <span class="text-sm text-gray-500 mt-2 block"
-            >Friday the 20th or 27th — you choose the date, I'll handle the
-            magic</span
+        <!-- Memory Lane Section -->
+        <div
+          id="memory-lane"
+          class="text-gray-700 text-lg mb-8 leading-relaxed space-y-4"
+        >
+          <p>
+            Do you remember the first time we saw each other at KFC? I was so
+            shy to even ask for your number…
+          </p>
+          <p>
+            Then we met at Pick n Pay, and I walked with you to your residence
+            because you were going to give my friend a mathematics book. Even
+            now, I’m still holding that book! 📖
+          </p>
+          <p>
+            That day you had to go to the salon, but I asked if I could get your
+            number from my friend, and you said yes… ❤️
+          </p>
+          <p>
+            After that, we started meeting at campus, and I remember how happy I
+            used to be just chilling or walking with you around campus.
+          </p>
+          <p class="font-semibold text-pink-500">
+            I want to ask you properly to be my girlfriend on the date we’ll go
+            on… 💕
+          </p>
+          <button
+            onclick="showYesNoButtons()"
+            class="btn-bounce bg-gradient-to-r from-pink-400 to-rose-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-pink-300/50"
           >
-        </p>
+            Continue 💌
+          </button>
+        </div>
 
-        <div class="space-y-4">
+        <!-- YES/NO Section -->
+        <div id="yes-no-section" class="hidden space-y-4">
           <p class="text-xl font-medium text-gray-800 mb-6">
             Will you let me take you out? 🥺
           </p>
-
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
@@ -265,7 +251,6 @@
             >
               YES! 💕
             </button>
-
             <button
               id="no-btn"
               onmouseover="moveButton()"
@@ -275,7 +260,6 @@
               No... 💔
             </button>
           </div>
-
           <p
             id="error-msg"
             class="text-red-500 text-sm mt-4 h-6 opacity-0 transition-opacity duration-300 font-medium"
@@ -283,7 +267,7 @@
         </div>
       </div>
 
-      <!-- Success Section (Hidden initially) -->
+      <!-- Success Section -->
       <div
         id="success-card"
         class="hidden glass rounded-3xl p-8 md:p-12 max-w-2xl w-full shadow-2xl text-center"
@@ -303,11 +287,9 @@
             ✨
           </div>
         </div>
-
         <h2 class="handwriting text-5xl md:text-7xl text-pink-600 mb-6">
           You Made My Day!
         </h2>
-
         <p class="text-gray-700 text-xl mb-6 leading-relaxed">
           I can't wait to see you! 💕<br />
           Check your email for the details...<br />
@@ -315,7 +297,6 @@
             >Sandton, here we come!</span
           >
         </p>
-
         <div class="bg-white/50 rounded-2xl p-6 mb-6">
           <p class="text-sm text-gray-600 mb-2">
             A confirmation has been sent to:
@@ -323,31 +304,25 @@
           <p class="font-semibold text-pink-600">mavhinamulisa9@gmail.com</p>
           <p class="text-xs text-gray-500 mt-2">(and to you too! 😉)</p>
         </div>
-
         <p class="handwriting text-3xl text-pink-500 mt-4">I love you! ❤️</p>
       </div>
     </div>
 
-    <!-- Confetti Canvas -->
     <canvas
       id="confetti"
       class="fixed inset-0 pointer-events-none z-50"
     ></canvas>
 
     <script>
-      // Configuration
+      const FORM_ENDPOINT = "https://formspree.io/f/mwvrworz";
       const YOUR_EMAIL = "mavhinamulisa9@gmail.com";
-      const HER_EMAIL = "lusandersilinda@gmail.com";
 
-      // Apology message for typewriter effect
       const apologyText =
         "I'm truly sorry for what happened. You mean the world to me, and I hate that I hurt you. I've been thinking about you every moment, and I want to make things right. You deserve all the love and happiness, and I want to be the one to give it to you...";
 
-      // Initialize floating hearts
       function createHearts() {
         const container = document.getElementById("hearts-container");
         const hearts = ["💕", "💖", "💗", "💓", "💝", "🌸", "✨"];
-
         setInterval(() => {
           const heart = document.createElement("div");
           heart.className = "heart";
@@ -356,17 +331,14 @@
           heart.style.animationDuration = Math.random() * 3 + 3 + "s";
           heart.style.fontSize = Math.random() * 20 + 15 + "px";
           container.appendChild(heart);
-
           setTimeout(() => heart.remove(), 6000);
         }, 300);
       }
 
-      // Typewriter effect
       function typeWriter(text, elementId, speed = 50) {
         let i = 0;
         const element = document.getElementById(elementId);
         element.innerHTML = "";
-
         function type() {
           if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -379,31 +351,27 @@
         type();
       }
 
-      // Show date section
       function showDateSection() {
         document.getElementById("apology-card").classList.add("hidden");
         document.getElementById("date-card").classList.remove("hidden");
-        document.getElementById("date-card").classList.add("animate-fade-in");
       }
 
-      // Moving "No" button - runs away from cursor
+      function showYesNoButtons() {
+        document.getElementById("memory-lane").classList.add("hidden");
+        document.getElementById("yes-no-section").classList.remove("hidden");
+      }
+
       function moveButton() {
         const btn = document.getElementById("no-btn");
         const card = document.getElementById("date-card");
         const rect = card.getBoundingClientRect();
-
-        // Calculate random position within the card
         const maxX = rect.width - btn.offsetWidth - 40;
         const maxY = rect.height - btn.offsetHeight - 40;
-
         const randomX = Math.random() * maxX - maxX / 2;
         const randomY = Math.random() * maxY - maxY / 2;
-
-        btn.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${
+        btn.style.transform = `translate(${randomX}px,${randomY}px) rotate(${
           Math.random() * 20 - 10
         }deg)`;
-
-        // Show error message
         const errorMsg = document.getElementById("error-msg");
         const messages = [
           "Oops! That button seems broken... try the other one! 😉",
@@ -415,16 +383,12 @@
         errorMsg.textContent =
           messages[Math.floor(Math.random() * messages.length)];
         errorMsg.style.opacity = "1";
-
-        // Shake effect
         btn.classList.add("glitch");
         setTimeout(() => btn.classList.remove("glitch"), 300);
       }
 
-      // Handle No click (shouldn't happen often due to hover, but just in case)
       function handleNo() {
         moveButton();
-        // Make button smaller each time
         const btn = document.getElementById("no-btn");
         const currentScale = parseFloat(
           btn.style.transform.match(/scale\(([^)]+)\)/)?.[1] || 1
@@ -432,77 +396,47 @@
         btn.style.transform += ` scale(${currentScale * 0.9})`;
       }
 
-      // Handle Yes click
-      function handleYes() {
-        // Send emails using EmailJS or mailto fallback
-        sendEmails();
-
-        // Show success
+      async function handleYes() {
+        await sendFormspreeEmail();
         document.getElementById("date-card").classList.add("hidden");
         document.getElementById("success-card").classList.remove("hidden");
-
-        // Trigger confetti
         startConfetti();
-
-        // Create explosion of hearts
         for (let i = 0; i < 20; i++) {
           setTimeout(createHearts, i * 100);
         }
       }
 
-      // Email functionality
-      function sendEmails() {
-        // Method 1: Try to open email client with pre-filled message
-        const subject = "💕 Date Confirmation - Sandton Friday!";
-        const body = `Hi Love,\n\nShe said YES! 🎉\n\nDate Details:\n📍 Location: Sandton\n📅 Options: Friday 20th or 27th\n💌 Status: CONFIRMED!\n\nCan't wait to see you!\nWith all my love ❤️`;
-
-        // Send to both emails (opening two mailto windows)
-        setTimeout(() => {
-          window.open(
-            `mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(
-              subject
-            )}&body=${encodeURIComponent(body)}`
-          );
-        }, 100);
-
-        setTimeout(() => {
-          window.open(
-            `mailto:${HER_EMAIL}?subject=${encodeURIComponent(
-              subject
-            )}&body=${encodeURIComponent(body)}`
-          );
-        }, 500);
-
-        // Method 2: If you want to use EmailJS for automatic sending without opening mail client:
-        // 1. Sign up at emailjs.com
-        // 2. Create a service and template
-        // 3. Uncomment and configure below:
-
-        /*
-            emailjs.init("YOUR_PUBLIC_KEY");
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                to_email: YOUR_EMAIL,
-                to_name: "You",
-                message: "She said YES! Sandton date confirmed!"
-            });
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                to_email: HER_EMAIL,
-                to_name: "My Love",
-                message: "You said YES! See you in Sandton! 💕"
-            });
-            */
+      async function sendFormspreeEmail() {
+        const data = {
+          _subject: "💕 Date Confirmation",
+          message: "She said YES! Sandton date confirmed! 💕",
+          to: "contentai40@gmail.com",
+          notify: "Yes",
+          your_email_notification: YOUR_EMAIL,
+        };
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          if (res.ok) {
+            console.log("Email sent!");
+          } else {
+            console.error("Formspree error:", res.statusText);
+          }
+        } catch (err) {
+          console.error("Network error:", err);
+        }
       }
 
-      // Confetti effect
       function startConfetti() {
         const canvas = document.getElementById("confetti");
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
         const pieces = [];
         const colors = ["#ff6b9d", "#feca57", "#48dbfb", "#ff9ff3", "#54a0ff"];
-
         for (let i = 0; i < 150; i++) {
           pieces.push({
             x: Math.random() * canvas.width,
@@ -514,10 +448,8 @@
             rotationSpeed: (Math.random() - 0.5) * 10,
           });
         }
-
         function animate() {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-
           pieces.forEach((p) => {
             ctx.save();
             ctx.translate(p.x, p.y);
@@ -525,42 +457,31 @@
             ctx.fillStyle = p.color;
             ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
             ctx.restore();
-
             p.y += p.speed;
             p.rotation += p.rotationSpeed;
-
             if (p.y > canvas.height) {
               p.y = -20;
               p.x = Math.random() * canvas.width;
             }
           });
-
           requestAnimationFrame(animate);
         }
         animate();
-
-        // Stop after 10 seconds
         setTimeout(() => {
           canvas.style.opacity = "0";
           canvas.style.transition = "opacity 2s";
         }, 10000);
       }
 
-      // Initialize
       window.onload = () => {
         createHearts();
         typeWriter(apologyText, "typewriter-text", 40);
       };
-
-      // Handle window resize for confetti
       window.addEventListener("resize", () => {
         const canvas = document.getElementById("confetti");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       });
     </script>
-
-    <!-- Optional: EmailJS SDK for automatic email sending -->
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
   </body>
 </html>
